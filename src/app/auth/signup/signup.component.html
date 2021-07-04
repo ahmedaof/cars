@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="spinner container" *ngIf="isloading">
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+    </div>
+  </div>
+    <div class="row" >
+     
+        <form  *ngIf="!isloading" (submit)="onsignup(signup)" #signup = "ngForm">
+            <div class="form-group">
+              <label for="email">email</label>
+              <input
+                type="text"
+                id="email"
+                class="form-control"
+                name="email"
+                ngModel
+                 #emailInput = "ngModel"
+                 required email
+             >
+         <span *ngIf = emailInput.invalid>Enter valid email</span>
+            </div>
+          
+           
+            <div class="form-group">
+              <label for="password">password</label>
+              <input
+                type="password"
+                id="password"
+                class="form-control"
+                name="password"
+                ngModel
+                #passwordInput = "ngModel"
+                required
+
+              >  
+              <span *ngIf = passwordInput.invalid>Enter the password</span>
+            </div>
+  
+        
+    
+          <button
+            class="btn btn-primary"
+            type="submit"
+           >signup</button>
+        </form>
+      </div>
+    </div>
+  
+  
+  
+  
